@@ -12,7 +12,7 @@ const Navbar = () => {
     var User = null 
 
   return (
-    <nav>
+    <nav className='main-nav'>
         <div className="navbar">
             {/* we will add various tabs 
             of navbar such as home about us ,, using the link element*/}
