@@ -1,4 +1,4 @@
-    import React from 'react'
+import React from 'react'
 import './LeftSidebar.css'
 import { NavLink } from 'react-router-dom'
 import Globe from  '../../assets/Globe.svg'
