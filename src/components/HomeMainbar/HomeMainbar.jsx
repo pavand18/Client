@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Link, useLocation } from 'react-router-dom'
+import {  useLocation, useNavigate } from 'react-router-dom'
 // import { useSelector} from 'react-redux'
 import './HomeMainbar.css'
 import QuestionList from './QuestionList'
@@ -60,6 +60,17 @@ const HomeMainbar = () => {
     }]  
 
     const location = useLocation()
+    const user = 1    
+    const navigate = useNavigate()
+
+    const checkAuth = () =>{
+        if(user===null){
+            alert("login or signup to Ask a Question")
+            navigate('/Auth')
+        }else{
+            navigate('/AskQuestion') 
+        }
+    }
 
     return (
         <div className='main-bar'>
@@ -67,7 +78,7 @@ const HomeMainbar = () => {
                 {
                     location.pathname === '/' ? <h1>Top Questions</h1> : <h1>All Questions</h1>
                 }
-                <Link to='/AskQuestion' className='ask-btn'>Ask Question</Link>
+                <button onClick={checkAuth} className='ask-btn'>Ask Question</button>
             </div>
             <div>
                 {
